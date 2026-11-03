@@ -8,7 +8,7 @@ int main(void)
 	int *data;
 
 	//共有メモリ作成
-	id = shmget(IPC_PRIVATE, 512, IPC_CREAT|0666);
+	id = shmget(IPC_PRIVATE, sizeof(int), IPC_CREAT|0666);
 
 	//メモリ共有
 	data = (int *)shmat(id,NULL,0);
